@@ -1,0 +1,299 @@
+<View>
+    <!--
+    Colors:
+    blue: background="#6BAED6"
+    purple: background="#9E9AC8"
+    orange: background="#FD8D3C"
+    green: background="#74C476"
+    gray: background="#969696"
+    -->
+
+    <Style>
+        .lsf-choice {
+        line-height: 1.5em
+        }
+        .myForm {
+        display: grid;
+        grid-template-columns: 0.5fr 2fr;
+        column-gap: 1em;
+        padding-left: 8px;
+        }
+        h2 {
+        /* Large headers */
+        font-size: 24px !important;
+        }
+        h3 {
+        /* Normal text */
+        font-weight: 400 !important;
+        font-size: 15px !important;
+        }
+        h4 {
+        /* Default header */
+        font-size: 17px !important;
+        }
+        h5 {
+        /* Subscripts and remarks */
+        font-weight: 400 !important;
+        font-size: 11px !important;
+        margin: 0px !important;
+        padding-left: 8px !important;
+        color: rgba(0, 0, 0, 0.5) !important;
+        }
+        .text-block {
+        border: 1px solid #e8e8e8;
+        background: rgba(0,0,0,.01);
+        margin-bottom: 0.5em;
+        border-radius: 3px;
+        padding: 10px 10px;
+        overflow: auto;
+        overflow-wrap: break-word;
+        }
+    </Style>
+
+    <!-- General information -->
+    <View className="myForm">
+        <Header value="Duration (minutes)" />
+        <TextArea toName="reference0" name="duration-minutes" maxSubmissions="1" editable="true"
+            placeholder="Duration (minutes)" required="true" />
+        <Header value="Remarks (optional)" />
+        <TextArea toName="reference0" name="remarks" maxSubmissions="1" editable="true"
+            placeholder="Any remarks, questions, problems, uncertainties..." />
+    </View>
+    <View style="border-bottom: 1.5px solid rgba(0,0,0,0.3); margin-bottom: 20px; margin-top: 20px;" />
+
+
+    <!-- Candidate 1 -->
+    <Header value="Candidate 1" />
+    <View className="text-block">
+        <Text name="reference0" value="$impression" granularity="word" showLabels="true" />
+        <Header value="Reference" size="5" />
+    </View>
+    <View className="text-block">
+        <Text name="candidate0" value="$candidate0" granularity="word" showLabels="true" />
+        <Header value="Candidate 1" size="5" />
+    </View>
+
+    <View style="display: flex">
+        <View>
+            <Header value="Omissions (apply to reference)" size="3" />
+            <Labels name="candidate0-labels-omissions" toName="reference0" showInline="false">
+                <Label alias="1a" value="1a. Finding/interpretation" background="#6BAED6" />
+                <Label alias="1b" value="1b. Comparison" background="#FD8D3C" />
+                <Label alias="1c" value="1c. Reference to report while comparing"
+                    background="#74C476" />
+                <Label alias="1d" value="1d. Next steps/recommendation/communications"
+                    background="#969696" />
+            </Labels>
+        </View>
+        <View>
+            <Header value="Additions (apply to candidate)" size="3" />
+            <Labels name="candidate0-labels-additions" toName="candidate0" showInline="false">
+                <Label alias="2a" value="2a. Finding/interpretation" background="#6BAED6" />
+                <Label alias="2b" value="2b. Comparison" background="#FD8D3C" />
+                <Label alias="2c" value="2c. Reference to report while comparing"
+                    background="#74C476" />
+                <Label alias="2d" value="2d. Next steps/recommendation/communication"
+                    background="#969696" />
+                <Label alias="2e" value="2e. Finding/interpretation + contradiction"
+                    background="#9E9AC8" />
+            </Labels>
+        </View>
+        <View>
+            <Header value="Other (apply to reference, candidate or both)" size="3" />
+            <Choices name="candidate0-errors" toName="candidate0" choice="multiple"
+                showInline="false">
+                <Choice value="3. Incorrect location/position of finding" />
+                <Choice value="4. Incorrect severity of finding" />
+                <Choice
+                    value="5. Other difference between candidate and reference (please describe...)"
+                    alias="other" />
+            </Choices>
+            <View whenTagName="candidate0-errors" whenChoiceValue="other"
+                visibleWhen="choice-selected" style="padding: 0px 10px;">
+                <TextArea toName="candidate0" name="errors-candidate0-other" maxSubmissions="1"
+                    editable="true" placeholder="Please describe..." required="true" />
+            </View>
+        </View>
+    </View>
+    <View style="border-bottom: 1.5px solid rgba(0,0,0,0.3); margin-bottom: 20px; margin-top: 20px;" />
+
+    <!-- Candidate 2 -->
+    <Header value="Candidate 2" />
+    <View className="text-block">
+        <Text name="reference1" value="$impression" granularity="word" showLabels="true" />
+        <Header value="Reference" size="5" />
+    </View>
+    <View className="text-block">
+        <Text name="candidate1" value="$candidate1" granularity="word" showLabels="true" />
+        <Header value="Candidate 2" size="5" />
+    </View>
+
+    <View style="display: flex">
+        <View>
+            <Header value="Omissions (apply to reference)" size="3" />
+            <Labels name="candidate1-labels-omissions" toName="reference1" showInline="false">
+                <Label alias="1a" value="1a. Finding/interpretation" background="#6BAED6" />
+                <Label alias="1b" value="1b. Comparison" background="#FD8D3C" />
+                <Label alias="1c" value="1c. Reference to report while comparing"
+                    background="#74C476" />
+                <Label alias="1d" value="1d. Next steps/recommendation/communications"
+                    background="#969696" />
+            </Labels>
+        </View>
+        <View>
+            <Header value="Additions (apply to candidate)" size="3" />
+            <Labels name="candidate1-labels-additions" toName="candidate1" showInline="false">
+                <Label alias="2a" value="2a. Finding/interpretation" background="#6BAED6" />
+                <Label alias="2b" value="2b. Comparison" background="#FD8D3C" />
+                <Label alias="2c" value="2c. Reference to report while comparing"
+                    background="#74C476" />
+                <Label alias="2d" value="2d. Next steps/recommendation/communication"
+                    background="#969696" />
+                <Label alias="2e" value="2e. Finding/interpretation + contradiction"
+                    background="#9E9AC8" />
+            </Labels>
+        </View>
+        <View>
+            <Header value="Other (apply to reference, candidate or both)" size="3" />
+            <Choices name="candidate1-errors" toName="candidate1" choice="multiple"
+                showInline="false">
+                <Choice value="3. Incorrect location/position of finding" />
+                <Choice value="4. Incorrect severity of finding" />
+                <Choice
+                    value="5. Other difference between candidate and reference (please describe...)"
+                    alias="other" />
+            </Choices>
+            <View whenTagName="candidate1-errors" whenChoiceValue="other"
+                visibleWhen="choice-selected" style="padding: 0px 10px;">
+                <TextArea toName="candidate1" name="errors-candidate1-other" maxSubmissions="1"
+                    editable="true" placeholder="Please describe..." required="true" />
+            </View>
+        </View>
+    </View>
+    <View style="border-bottom: 1.5px solid rgba(0,0,0,0.3); margin-bottom: 20px; margin-top: 20px;" />
+
+    <!-- Candidate 3 -->
+    <Header value="Candidate 3" />
+    <View className="text-block">
+        <Text name="reference2" value="$impression" granularity="word" showLabels="true" />
+        <Header value="Reference" size="5" />
+    </View>
+    <View className="text-block">
+        <Text name="candidate2" value="$candidate2" granularity="word" showLabels="true" />
+        <Header value="Candidate 3" size="5" />
+    </View>
+
+    <View style="display: flex">
+        <View>
+            <Header value="Omissions (apply to reference)" size="3" />
+            <Labels name="candidate2-labels-omissions" toName="reference2" showInline="false">
+                <Label alias="1a" value="1a. Finding/interpretation" background="#6BAED6" />
+                <Label alias="1b" value="1b. Comparison" background="#FD8D3C" />
+                <Label alias="1c" value="1c. Reference to report while comparing"
+                    background="#74C476" />
+                <Label alias="1d" value="1d. Next steps/recommendation/communications"
+                    background="#969696" />
+            </Labels>
+        </View>
+        <View>
+            <Header value="Additions (apply to candidate)" size="3" />
+            <Labels name="candidate2-labels-additions" toName="candidate2" showInline="false">
+                <Label alias="2a" value="2a. Finding/interpretation" background="#6BAED6" />
+                <Label alias="2b" value="2b. Comparison" background="#FD8D3C" />
+                <Label alias="2c" value="2c. Reference to report while comparing"
+                    background="#74C476" />
+                <Label alias="2d" value="2d. Next steps/recommendation/communication"
+                    background="#969696" />
+                <Label alias="2e" value="2e. Finding/interpretation + contradiction"
+                    background="#9E9AC8" />
+            </Labels>
+        </View>
+        <View>
+            <Header value="Other (apply to reference, candidate or both)" size="3" />
+            <Choices name="candidate2-errors" toName="candidate2" choice="multiple"
+                showInline="false">
+                <Choice value="3. Incorrect location/position of finding" />
+                <Choice value="4. Incorrect severity of finding" />
+                <Choice
+                    value="5. Other difference between candidate and reference (please describe...)"
+                    alias="other" />
+            </Choices>
+            <View whenTagName="candidate2-errors" whenChoiceValue="other"
+                visibleWhen="choice-selected" style="padding: 0px 10px;">
+                <TextArea toName="candidate2" name="errors-candidate2-other" maxSubmissions="1"
+                    editable="true" placeholder="Please describe..." required="true" />
+            </View>
+        </View>
+    </View>
+    <View style="border-bottom: 1.5px solid rgba(0,0,0,0.3); margin-bottom: 20px; margin-top: 20px;" />
+
+    <!-- Candidate 4 -->
+    <Header value="Candidate 4" />
+    <View className="text-block">
+        <Text name="reference3" value="$impression" granularity="word" showLabels="true" />
+        <Header value="Reference" size="5" />
+    </View>
+    <View className="text-block">
+        <Text name="candidate3" value="$candidate3" granularity="word" showLabels="true" />
+        <Header value="Candidate 4" size="5" />
+    </View>
+
+    <View style="display: flex">
+        <View>
+            <Header value="Omissions (apply to reference)" size="3" />
+            <Labels name="candidate3-labels-omissions" toName="reference3" showInline="false">
+                <Label alias="1a" value="1a. Finding/interpretation" background="#6BAED6" />
+                <Label alias="1b" value="1b. Comparison" background="#FD8D3C" />
+                <Label alias="1c" value="1c. Reference to report while comparing"
+                    background="#74C476" />
+                <Label alias="1d" value="1d. Next steps/recommendation/communications"
+                    background="#969696" />
+            </Labels>
+        </View>
+        <View>
+            <Header value="Additions (apply to candidate)" size="3" />
+            <Labels name="candidate3-labels-additions" toName="candidate3" showInline="false">
+                <Label alias="2a" value="2a. Finding/interpretation" background="#6BAED6" />
+                <Label alias="2b" value="2b. Comparison" background="#FD8D3C" />
+                <Label alias="2c" value="2c. Reference to report while comparing"
+                    background="#74C476" />
+                <Label alias="2d" value="2d. Next steps/recommendation/communication"
+                    background="#969696" />
+                <Label alias="2e" value="2e. Finding/interpretation + contradiction"
+                    background="#9E9AC8" />
+            </Labels>
+        </View>
+        <View>
+            <Header value="Other (apply to reference, candidate or both)" size="3" />
+            <Choices name="candidate3-errors" toName="candidate3" choice="multiple"
+                showInline="false">
+                <Choice value="3. Incorrect location/position of finding" />
+                <Choice value="4. Incorrect severity of finding" />
+                <Choice
+                    value="5. Other difference between candidate and reference (please describe...)"
+                    alias="other" />
+            </Choices>
+            <View whenTagName="candidate3-errors" whenChoiceValue="other"
+                visibleWhen="choice-selected" style="padding: 0px 10px;">
+                <TextArea toName="candidate3" name="errors-candidate3-other" maxSubmissions="1"
+                    editable="true" placeholder="Please describe..." required="true" />
+            </View>
+        </View>
+    </View>
+</View><!--
+{
+    "data": {
+        "id": 50848467,
+        "impression": "Slight increased hazy opacities at the right lung base which may reflect developing
+consolidation in the appropriate clinical setting.",
+        "candidate0": "slightly increased hazy opacity at the right lung base, which may represent
+developing pneumonia in the appropriate clinical setting.",
+        "candidate1": "slightly increased hazy opacities at the right lung base may represent atelectasis
+or early pneumonia.",
+        "candidate2": "slightly increased hazy opacities at the right lung base which may represent
+atelectasis or developing consolidation.",
+        "candidate3": "slightly increased hazy opacities at the right lung base, which could represent
+early pneumonia in the appropriate clinical setting."
+    }
+}
+-->

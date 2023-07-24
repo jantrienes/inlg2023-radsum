@@ -1,0 +1,36 @@
+name: test
+on: [push]
+
+# https://stackoverflow.com/a/72408109
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: test
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create conda environment
+        uses: mamba-org/provision-with-micromamba@main
+        with:
+          environment-file: environment.yml
+          environment-name: guided-summary
+          cache-env: true
+
+      - name: Install test dependencies
+        shell: bash -l {0}
+        run: |
+          micromamba activate guided-summary
+          pip install -r requirements-dev.txt
+          pip install -e .
+
+      - name: Run tests
+        shell: bash -l {0}
+        run: |
+          micromamba activate guided-summary
+          make test
+          make lintci
+

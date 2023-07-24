@@ -1,0 +1,27 @@
+name: radnli
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - pip
+  - tqdm=4.64.0
+  - seaborn=0.11.2
+  - matplotlib=3.5.1
+  - scikit-learn=1.0.2
+  - cudatoolkit=11.3
+  - pytorch=1.11.0
+  - torchvision=0.12.0
+  - torchaudio=0.11.0
+  - cachetools=4.1.0
+  - pip:
+    - loguru==0.6.0
+    - spacy==2.1.3
+    - bert-score==0.3.0
+    - nltk==3.7
+    - jinja2<3 # eli5 compatibility https://github.com/eli5-org/eli5/pull/17/files
+    - markupsafe<2 # eli5 compatibility https://github.com/eli5-org/eli5/pull/17/files
+    - transformers==2.8.0
+    - git+https://github.com/MeMartijn/updated-sklearn-crfsuite.git#egg=sklearn_crfsuite # https://github.com/TeamHG-Memex/sklearn-crfsuite/pull/69
+    - stanza==1.1.1

@@ -1,0 +1,15 @@
+[submodule "PreSumm"]
+	path = PreSumm
+	url = git@github.com:jantrienes/PreSumm.git
+[submodule "GSum"]
+	path = GSum
+	url = git@github.com:jantrienes/guided_summarization.git
+[submodule "WGSum"]
+	path = WGSum
+	url = git@github.com:jantrienes/WGSum.git
+[submodule "AIG_CL"]
+	path = AIG_CL
+	url = git@github.com:jantrienes/AIG_CL.git
+[submodule "ifcc"]
+	path = ifcc
+	url = https://github.com/ysmiura/ifcc

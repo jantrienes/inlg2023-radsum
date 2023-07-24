@@ -1,0 +1,31 @@
+name: guided-summary
+channels:
+  - pytorch
+  - huggingface
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.10
+  - pip=21.1.1
+  - tqdm
+  - seaborn=0.11.1
+  - matplotlib=3.3.4
+  - pandas=1.2.4
+  - scikit-learn=0.24.2
+  - pytorch=1.10.0
+  - cudatoolkit=11.3
+  - kneed=0.7.0
+  - transformers=4.11.3
+  - datasets=1.18.4
+  - pip:
+    - spacy==2.3.5
+    - https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.0/en_core_web_sm-2.3.0.tar.gz#egg=en_core_web_sm==2.3.0
+    - loguru==0.5.3
+    - nltk==3.6.2
+    - pytextrank==2.1.0
+    - lime==0.2.0.1
+    - rouge-score==0.0.4
+    - git+https://github.com/jantrienes/bert_score.git@a624b1c115669e9909adea4a82161ab61d616d35#egg=bert_score
+    - git+https://github.com/tanyuqian/ctc-gen-eval.git@3ccd220c153cfe45e9691698d0e9410133c13109#egg=ctc_score
+    - gdown
+    - evaluate==0.4.0
