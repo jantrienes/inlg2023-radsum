@@ -2,7 +2,7 @@
 
 This repository provides the code for following paper:
 
-> Jan Trienes, Paul Youssef, Jörg Schlötterer, and Christin Seifert. 2023. [Guidance in Radiology Report Summarization: An Empirical Evaluation and Error Analysis](todo). In _Proceedings of the 16th International Natural Language Generation Conference (INLG)_, Prague, Czech Republic. Association for Computational Linguistics.
+> Jan Trienes, Paul Youssef, Jörg Schlötterer, and Christin Seifert. 2023. [Guidance in Radiology Report Summarization: An Empirical Evaluation and Error Analysis](https://arxiv.org/abs/2307.12803). In _Proceedings of the 16th International Natural Language Generation Conference (INLG)_, Prague, Czech Republic. Association for Computational Linguistics.
 
 **Contents:**
 
@@ -218,4 +218,4 @@ If you use the resources in this repository, please cite:
 
 ## Contact
 
-If you have any question, please contact Jan Trienes at `jan.trienes [AT] gmail.com`.
+If you have any questions, please contact Jan Trienes at `jan.trienes [AT] gmail.com`.
