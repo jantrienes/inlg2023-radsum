@@ -2,7 +2,7 @@
 
 This repository provides the code for following paper:
 
-> Jan Trienes, Paul Youssef, Jörg Schlötterer, and Christin Seifert. 2023. [Guidance in Radiology Report Summarization: An Empirical Evaluation and Error Analysis](https://arxiv.org/abs/2307.12803). In _Proceedings of the 16th International Natural Language Generation Conference (INLG)_, Prague, Czech Republic. Association for Computational Linguistics.
+> Jan Trienes, Paul Youssef, Jörg Schlötterer, and Christin Seifert. 2023. [Guidance in Radiology Report Summarization: An Empirical Evaluation and Error Analysis](https://aclanthology.org/2023.inlg-main.13/). In _Proceedings of the 16th International Natural Language Generation Conference (INLG)_, Prague, Czech Republic. Association for Computational Linguistics.
 
 **Contents:**
 
@@ -205,14 +205,16 @@ make format
 If you use the resources in this repository, please cite:
 
 ```bibtex
-@inproceedings{Trienes:2023:INLG,
-    title = "Guidance in Radiology Report Summarization: An Empirical Evaluation and Error Analysis",
+@InProceedings{Trienes:2023:INLG,
+    title = "Guidance in Radiology Report Summarization: {A}n Empirical Evaluation and Error Analysis",
     author = {Trienes, Jan  and
       Youssef, Paul  and
       Schl{\"o}tterer, J{\"o}rg  and
       Seifert, Christin},
     booktitle = "Proceedings of the 16th International Natural Language Generation Conference (INLG)",
     year = "2023",
+    doi = "10.18653/v1/2023.inlg-main.13",
+    pages = "176--195",
 }
 ```
 
